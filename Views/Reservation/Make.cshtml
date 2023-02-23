@@ -1,0 +1,42 @@
+﻿@model ReservationModel
+@{
+    ViewData["Title"] = "Rezervasyon Yap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/angularjs-datepicker/angular-datepicker.js"></script>
+<script src="~/angularjs-datepicker/angular-datepicker.min.js"></script>
+
+<div class="col-12">
+    <div class="row" style="margin-bottom: 10px">
+        <h3>@ViewData["Title"]</h3>
+    </div>
+    <div class="col-4">
+        <form class="form-group" method="post">
+            @Html.DropDownListFor(x => x.CompanyName, (IEnumerable<SelectListItem>)ViewBag.Companies,"İşletme Seç", new { @class = "form-control"})
+            @Html.ValidationMessageFor(x => x.CompanyName, "", new { @style = "color:red" })
+            <br />      
+            @Html.TextBoxFor(x => x.CustomerName, new { @class = "form-control", placeholder = "Ad Soyad" })
+            @Html.ValidationMessageFor(x => x.CustomerName, "", new { @style = "color:red" })
+            <br />
+            @Html.TextBoxFor(x => x.Date, new { @type="date", @class = "form-control datepicker"})
+            @Html.ValidationMessageFor(x => x.Date, "", new { @style = "color:red" })        
+            <br />
+            <div class="row">
+                <div class="col-6">
+                    @Html.TextBoxFor(x => x.CustomerCount, new { @class = "form-control", placeholder = "Kişi Sayısı" })
+                    @Html.ValidationMessageFor(x => x.CustomerCount, "", new { @style = "color:red" })
+                </div>
+                <div class="col-6">
+                    @Html.DropDownListFor(x => x.TableNo, @ViewBag.Tables as List<SelectListItem>,"Masa Numarası Seç", new { @class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.TableNo, "", new { @style = "color:red" })
+                </div>
+            </div>
+            <br />
+            <button class="btn btn-info col-12">Rezervasyon Yap</button>
+        </form>
+    </div>
+</div>
+
+
+

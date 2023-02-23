@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<title>Reservation Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/sidebar.css" rel="stylesheet" />
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/jquery-validate/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+<body>
+
+<div class="sidebar-container">
+    <div class="sidebar-logo">
+        Reservation Project
+    </div>
+    <ul class="sidebar-navigation">
+        <li class="header">Menu</li>
+        <li>
+            <a href="/Reservation/List">
+                <i class="fa fa-home" aria-hidden="true"></i> Rezervasyonlar
+            </a>
+        </li>
+        <li>
+            <a href="/Reservation/Make">
+                <i class="fa fa-home" aria-hidden="true"></i> Rezervasyon Yap
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="content-container">
+    <div class="container-fluid">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          
+            @RenderBody()
+            
+        </div>
+
+    </div>
+</div>
+</body>
+
+
